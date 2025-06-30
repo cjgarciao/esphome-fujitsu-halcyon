@@ -13,7 +13,7 @@ constexpr std::array ControllerName = { "Primary", "Secondary", "Undocumented" }
 
 void FujitsuHalcyonController::setup() {
     this->controller = new fujitsu_halcyon_controller::Controller(
-        static_cast<uart::IDFUARTComponent*>(this->parent_)->get_hw_serial_number(),
+        (uart_port_t) static_cast<uart::IDFUARTComponent*>(this->parent_)->get_hw_serial_number(),
         this->controller_address_,
         {
             .Config = [this](const fujitsu_halcyon_controller::Config& data){ this->update_from_device(data); },
