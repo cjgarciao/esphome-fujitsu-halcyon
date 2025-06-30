@@ -73,7 +73,7 @@ class Controller {
     };
 
     public:
-        Controller(uint8_t uart_num, uint8_t controller_address, const Callbacks& callbacks, QueueHandle_t uart_event_queue = nullptr)
+        Controller(uart_port_t uart_num, uint8_t controller_address, const Callbacks& callbacks, QueueHandle_t uart_event_queue = nullptr)
             : uart_num(uart_num), controller_address(controller_address), uart_event_queue(uart_event_queue), callbacks(callbacks) {}
 
         bool start();
