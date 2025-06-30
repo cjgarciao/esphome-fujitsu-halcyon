@@ -107,7 +107,7 @@ class Controller {
         void process_packet(const Packet::Buffer& buffer, bool lastPacketOnWire = true);
 
     private:
-        uint8_t uart_num;
+        uart_port_t uart_num;
         uint8_t controller_address;
         QueueHandle_t uart_event_queue;
         Callbacks callbacks;
